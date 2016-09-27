@@ -12,5 +12,58 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="@string/lblDegrees"
+        android:id="@+id/lblDegrees"
+        android:textIsSelectable="false"
+        android:textSize="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:textColor="#000000" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lblFarenheit"
+        android:id="@+id/lblFarenheit"
+        android:layout_below="@+id/lblDegrees"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="43dp"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textColor="#000000"
+        android:padding="10dp"
+        android:paddingTop="-5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lblCelcius"
+        android:id="@+id/lblCelcius"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textColor="#000000"
+        android:layout_below="@+id/lblFarenheit"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:padding="10dp"
+        android:paddingTop="-5dp" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtFarenheit"
+        android:layout_alignTop="@+id/lblFarenheit"
+        android:layout_toRightOf="@+id/lblFarenheit"
+        android:layout_toEndOf="@+id/lblFarenheit" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtCelcius"
+        android:layout_below="@+id/lblFarenheit"
+        android:layout_alignLeft="@+id/txtFarenheit"
+        android:layout_alignStart="@+id/txtFarenheit" />
+
 </RelativeLayout>
