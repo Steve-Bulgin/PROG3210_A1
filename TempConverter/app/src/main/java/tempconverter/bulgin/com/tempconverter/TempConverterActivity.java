@@ -4,6 +4,7 @@
  * 		Steven Bulgin, 	2016.09.19: Created
  *      Steven Bulgin, 2016.09.28: Got farenheit to celcius working on change
  *      Steven Bulgin, 2016.09.28: Checks for overflows work
+ *      Steven Bulgin, 2016.09.30: Tried OnFocusChange Listener, no go :-(
  */
 
 /****** Bugs ******/
