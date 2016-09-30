@@ -30,7 +30,7 @@ public class TempConverterActivity extends AppCompatActivity {
     private EditText txtCelcius;
     private float farenheit = 0f;
     private float celsius = 0f;
-    private boolean focusChk = true; // t = farenheit, f = celcius;
+    private boolean focusChk = false; // t = farenheit, f = celcius;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +38,7 @@ public class TempConverterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_temp_converter);
         txtFarenheit = (EditText) findViewById(R.id.txtFarenheit);
         txtCelcius = (EditText) findViewById(R.id.txtCelcius);
-        txtFarenheit.requestFocus();
+        txtCelcius.requestFocus();
 
         txtFarenheit.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -114,10 +114,10 @@ public class TempConverterActivity extends AppCompatActivity {
 
                         //Check overflows
                         if (farenheit < Float.MAX_VALUE && farenheit != Float.NEGATIVE_INFINITY) {
-                            txtCelcius.setText(String.format("%.2f", farenheit));
+                            txtFarenheit.setText(String.format("%.2f", farenheit));
                         }
                         else if (farenheit > Float.MAX_VALUE) {
-                            txtCelcius.setText("Value is too high");
+                            txtFarenheit.setText("Value is too high");
                         }
                         else if (farenheit == Float.NEGATIVE_INFINITY) {
                             txtFarenheit.setText("Value is too low");
