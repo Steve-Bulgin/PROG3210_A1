@@ -54,6 +54,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/txtFarenheit"
+        android:maxLines="1"
         android:layout_alignTop="@+id/lblFarenheit"
         android:layout_toRightOf="@+id/lblFarenheit"
         android:layout_toEndOf="@+id/lblFarenheit" />
@@ -62,6 +63,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/txtCelcius"
+        android:maxLines="1"
         android:layout_alignBottom="@+id/lblCelcius"
         android:layout_toRightOf="@+id/lblCelcius"
         android:layout_toEndOf="@+id/lblCelcius" />
