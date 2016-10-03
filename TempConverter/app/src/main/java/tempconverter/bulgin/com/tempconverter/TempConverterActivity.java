@@ -5,6 +5,7 @@
  *      Steven Bulgin, 2016.09.28: Got farenheit to celcius working on change
  *      Steven Bulgin, 2016.09.28: Checks for overflows work
  *      Steven Bulgin, 2016.09.30: Tried OnFocusChange Listener, no go :-(
+ *      Steven Bulgin, 2016.10.03: Used try/catch around the Float parse to solve negatives
  */
 
 /****** Bugs ******/
@@ -82,7 +83,13 @@ public class TempConverterActivity extends AppCompatActivity {
                     @Override
                     public void afterTextChanged(Editable s) {
                         if (s.length()>0) {
-                            farenheit = Float.parseFloat(s.toString());
+                            try {
+                                farenheit = Float.parseFloat(s.toString());
+                            }
+                            catch (Exception e) {
+                                Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_SHORT).show();
+                            }
+
                             celsius = (farenheit - 32) * 0.5556f;
 
                             //Check overflows
@@ -123,7 +130,13 @@ public class TempConverterActivity extends AppCompatActivity {
                     @Override
                     public void afterTextChanged(Editable s) {
                         if (s.length() > 0) {
-                            celsius = Float.parseFloat(s.toString());
+                            try {
+                                celsius = Float.parseFloat(s.toString());
+                            }
+                            catch (Exception e){
+                                Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_SHORT).show();
+                            }
+
                             farenheit = (celsius * 1.8f) + 32f;
 
                             //Check overflows
