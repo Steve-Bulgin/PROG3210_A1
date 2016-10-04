@@ -48,6 +48,7 @@ public class TempConverterActivity extends AppCompatActivity  {
         txtCelcius = (EditText) findViewById(R.id.txtCelcius);
         //txtCelcius.setOnFocusChangeListener(CelsiuschangeChk);
         //txtFarenheit.setOnTouchListener(TouchCelsius);
+        txtCelcius.requestFocus();
 
         txtFarenheit.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
@@ -118,13 +119,13 @@ public class TempConverterActivity extends AppCompatActivity  {
 
                 s = null;
                 celsius = 0f;
-                return false;
+                return true;
             }
         });
 
 
 
-        txtCelcius.requestFocus();
+
     }
 
 
