@@ -3,9 +3,8 @@
 
 /****** Bugs ******/
 
-// Check for focus doesn't work<br>
-// Negative values crash app<br>
-// Fix spelling
+Everything seems to work
+Do more testing before hand in Friday
 
 
 ![screencap](/screenscaps/screencap.png)
