@@ -24,7 +24,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/lblFarenheit"
+        android:text="@string/lblFahrenheit"
         android:id="@+id/lblFarenheit"
         android:layout_below="@+id/lblDegrees"
         android:layout_alignParentLeft="true"
@@ -39,7 +39,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/lblCelcius"
+        android:text="@string/lblCelsius"
         android:id="@+id/lblCelcius"
         android:textStyle="bold"
         android:textSize="20dp"
@@ -55,6 +55,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/txtFarenheit"
         android:maxLines="1"
+        android:inputType="numberDecimal"
         android:layout_alignTop="@+id/lblFarenheit"
         android:layout_toRightOf="@+id/lblFarenheit"
         android:layout_toEndOf="@+id/lblFarenheit" />
@@ -64,6 +65,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/txtCelcius"
         android:maxLines="1"
+        android:inputType="numberDecimal"
         android:layout_alignBottom="@+id/lblCelcius"
         android:layout_toRightOf="@+id/lblCelcius"
         android:layout_toEndOf="@+id/lblCelcius" />

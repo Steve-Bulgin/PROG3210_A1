@@ -46,7 +46,7 @@ public class TempConverterActivity extends AppCompatActivity {
                         celsius = Float.parseFloat(s.toString());
                     }
                     catch (Exception e){
-                        Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_SHORT).show();
+                       // Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_SHORT).show();
                     }
 
                     fahrenheit = (celsius * 1.8f) + 32f;
@@ -96,7 +96,7 @@ public class TempConverterActivity extends AppCompatActivity {
                 try {
                     fahrenheit = Float.parseFloat(s.toString());
                 } catch (Exception e) {
-                    Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_SHORT).show();
                 }
 
                 celsius = (fahrenheit - 32) * 0.5556f;

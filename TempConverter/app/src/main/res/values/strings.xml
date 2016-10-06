@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Temp Converter</string>
     <string name="lblDegrees">Degrees</string>
-    <string name="lblFarenheit">Farenheit</string>
-    <string name="lblCelcius">Celsius</string>
+    <string name="lblFahrenheit">Fahrenheit</string>
+    <string name="lblCelsius">Celsius</string>
     <string name="txtFarenheit" />
     <string name="txtCelcius" />
 </resources>
