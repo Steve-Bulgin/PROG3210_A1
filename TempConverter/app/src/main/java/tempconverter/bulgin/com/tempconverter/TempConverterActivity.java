@@ -41,7 +41,7 @@ public class TempConverterActivity extends AppCompatActivity {
 
         @Override
         public void afterTextChanged(Editable s) {
-            if (s.length() > 0) {
+            if (s.length() > 0 && isParsable(s.toString())) {
                     try {
                         celsius = Float.parseFloat(s.toString());
                     }
@@ -52,7 +52,7 @@ public class TempConverterActivity extends AppCompatActivity {
                     fahrenheit = (celsius * 1.8f) + 32f;
 
                     //Check overflows
-                    if (fahrenheit < Float.MAX_VALUE && fahrenheit != Float.NEGATIVE_INFINITY) {
+                    if (fahrenheit < Float.MAX_VALUE && fahrenheit != Float.NEGATIVE_INFINITY && fahrenheit > -459.67f) {
                         txtFahrenheit.removeTextChangedListener(fahrenheitListener);
                         txtFahrenheit.setText(String.format("%.2f", fahrenheit));
                         txtFahrenheit.addTextChangedListener(fahrenheitListener);
@@ -62,9 +62,9 @@ public class TempConverterActivity extends AppCompatActivity {
                         txtFahrenheit.setText("Value is too high");
                         txtFahrenheit.addTextChangedListener(fahrenheitListener);
                     }
-                    else if (fahrenheit == Float.NEGATIVE_INFINITY) {
+                    else if (fahrenheit <= -459.67) {
                         txtFahrenheit.removeTextChangedListener(fahrenheitListener);
-                        txtFahrenheit.setText("Value is too low");
+                        txtFahrenheit.setText("-459.67 Absolute Zero");
                         txtFahrenheit.addTextChangedListener(fahrenheitListener);
                     }
                 }
@@ -92,7 +92,7 @@ public class TempConverterActivity extends AppCompatActivity {
         @Override
         public void afterTextChanged(Editable s) {
 
-            if (s.length() > 0) {
+            if (s.length() > 0 && isParsable(s.toString())) {
                 try {
                     fahrenheit = Float.parseFloat(s.toString());
                 } catch (Exception e) {
@@ -102,7 +102,7 @@ public class TempConverterActivity extends AppCompatActivity {
                 celsius = (fahrenheit - 32) * 0.5556f;
 
                 //Check overflows
-                if (celsius < Float.MAX_VALUE && celsius != Float.NEGATIVE_INFINITY) {
+                if (celsius < Float.MAX_VALUE && celsius != Float.NEGATIVE_INFINITY && celsius > -273.15f) {
                     txtCelsius.removeTextChangedListener(celsiusListener);
                     txtCelsius.setText(String.format("%.2f", celsius));
                     txtCelsius.addTextChangedListener(celsiusListener);
@@ -110,9 +110,9 @@ public class TempConverterActivity extends AppCompatActivity {
                     txtCelsius.removeTextChangedListener(celsiusListener);
                     txtCelsius.setText("Value is too high");
                     txtCelsius.addTextChangedListener(celsiusListener);
-                } else if (celsius == Float.NEGATIVE_INFINITY) {
+                } else if (celsius <= -273.15f) {
                     txtCelsius.removeTextChangedListener(celsiusListener);
-                    txtCelsius.setText("Value is too low");
+                    txtCelsius.setText("-273.15 Absolute Zero");
                     txtCelsius.addTextChangedListener(celsiusListener);
                 }
             } else {
@@ -135,5 +135,18 @@ public class TempConverterActivity extends AppCompatActivity {
         txtFahrenheit.addTextChangedListener(fahrenheitListener);
 
         txtFahrenheit.requestFocus();
+    }
+
+
+    //My functions
+    //Checks if string is parsable to float
+    public static boolean isParsable(String input){
+        boolean parsable = true;
+        try{
+            Float.parseFloat(input);
+        }catch(NumberFormatException e){
+            parsable = false;
+        }
+        return parsable;
     }
 }
